@@ -1,0 +1,33 @@
+@use '../../Utils/mixins' as *;
+@use '../../Utils/variables' as *;
+
+@include bp('phone') {
+  .container-inner:nth-child(1) {
+    .row {
+      padding-top: $mobileDivSpacing*2;
+    }
+  }
+  .row {
+    @include row;
+    padding: $mobileDivSpacing 0;
+    gap: $mobileDivGridGap;
+    .column {
+      @include column(auto, 100%, 100%, 0);
+    }
+  }
+}
+
+@include bp('tablet') {
+  .container-inner:nth-child(1) {
+    .row {
+      padding-top: $tabletDivSpacing*2;
+    }
+  }
+  .row {
+    padding: $tabletDivSpacing 0;
+    gap: $tabletDivGridGap;
+    .column {
+      @include column(auto, calc(50% - $tabletDivGridGap/2), 100%, 0);
+    }
+  }
+}

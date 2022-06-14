@@ -1,0 +1,43 @@
+@use '../../Utils/mixins' as *;
+@use '../../Utils/variables' as *;
+
+
+@include bp('phone') {
+  .row {
+    .column {
+      .row {
+        padding: 0;
+        .column {
+          background: black;
+          @include flex-align(center, center, column);
+          .skill {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .skill-image {
+              height: $skillMobile;
+              width: $skillMobile;
+            }
+            h3 {
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include bp('tablet') {
+  .row {
+    .column {
+      .row {
+        gap: $tabletDivGridGap;
+        padding: 0;
+        .column {
+          @include column(auto, $skillMobile, 100%, 0);
+        }
+      }
+    }
+  }
+}

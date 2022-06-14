@@ -1,0 +1,10 @@
+@use '../../Utils/mixins' as *;
+@use '../../Utils/variables' as *;
+
+.footer {
+  @include flex-align(center, center, row);
+  a {
+    color: white;
+    font-size: $a !important;
+  }
+}

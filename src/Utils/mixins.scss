@@ -1,0 +1,51 @@
+@mixin flex-align($horizontal, $vertical, $direction) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $horizontal;
+  justify-content: $vertical;
+}
+
+@mixin row {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
+@mixin column($height, $flex-basis, $width, $padding) {
+  height: $height;
+  flex-basis: $flex-basis;
+  -ms-flex: auto;
+  width: $width;
+  position: relative;
+  padding: $padding;
+  box-sizing: border-box;
+}
+
+@mixin bp($point) {
+	$bp-phone: "screen and (min-width: 240px)";       // phone vertically & up
+	$bp-tablet: "screen and (min-width: 640px)";      // tablet vertically & up
+  $bp-small-laptop: "screen and (min-width: 1024px)";      // tablet vertically & up
+	$bp-laptop: "screen and (min-width: 1366px)";     // laptop & up
+	$bp-small-desktop: "screen and (min-width: 1920px)"; // small-desktop & up
+	$bp-desktop: "screen and (min-width: 2560px)"; // desktop & up
+	// MEDIA QUERIES
+	@if $point == phone {     // phone
+		@media #{$bp-phone} { @content; }
+	}
+	@if $point == tablet {     // tablet
+		@media #{$bp-tablet} { @content; }
+	}
+  @if $point == small-laptop {     // small-laptop
+		@media #{$bp-small-laptop} { @content; }
+	}
+	@if $point == laptop {     // laptop
+		@media #{$bp-laptop} { @content; }
+	}
+	@if $point == small-desktop {     // desktop
+		@media #{$bp-small-desktop} { @content; }
+	}
+	@if $point == desktop {     // desktop
+		@media #{$bp-desktop} { @content; }
+	}
+
+} // end mixin bp

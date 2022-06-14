@@ -1,0 +1,14 @@
+@use '../../Utils/mixins' as *;
+@use '../../Utils/variables' as *;
+
+@include bp('phone') {
+  .container {
+    padding: $mobilePadding*3 $mobilePadding 0 $mobilePadding;
+    position: relative;
+  }
+}
+
+@include bp('tablet') {
+  .container {
+    padding: $mobilePadding*3 $mobilePadding*4 0 $mobilePadding*4;  }
+}

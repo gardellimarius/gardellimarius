@@ -1,0 +1,37 @@
+@use '../../Utils/mixins' as *;
+@use '../../Utils/variables' as *;
+$blur: 10px;
+
+@include bp('phone') {
+  .navbar {
+    position: fixed;
+    width: 100%;
+    padding: $mobilePadding;
+    border-bottom: 1px solid rgba(255, 255, 255, .3);
+    @include flex-align(center, space-between, row);
+    color: $colorMain;
+    z-index: 1;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    .navbar--text, .navbar--logo{
+      z-index: 9999;
+      color: white;
+    }
+    .navbar--logo {
+      background: url('../../Assets/logo.svg');
+      background-size: cover;
+      width: $mobilePadding;
+      height: $mobilePadding;
+    }
+    .navbar--text {
+      font-size: 1.6rem !important;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+@include bp('tablet') {
+  .navbar {
+    padding: $mobilePadding $mobilePadding*4;
+  }
+}

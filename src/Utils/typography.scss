@@ -1,0 +1,86 @@
+@use './variables' as *;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+html {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  font-size: $h1 !important;
+  font-weight: 700 !important;
+}
+
+h2 {
+  font-size: $h2 !important;
+  text-transform: uppercase ;
+  font-weight: 700 !important;
+}
+
+.row-about {
+  h2 {
+    line-height: 150%;
+  }
+}
+
+.row-projects {
+  h2 {
+    margin: $h2 0 $h2/2 0;
+  }
+}
+
+.row-skills {
+  h3 {
+    margin-top: $h3;
+  }
+}
+
+.container-inner {
+  .row {
+    .column-text {
+      a {
+        margin-bottom: $a;
+        color: white;
+        .back {
+          font-size: 2rem !important; 
+        }
+      }
+      h1 {
+        margin: $h1 0 $h1/2 0;
+      }
+      h2 {
+        margin-bottom: $h2/2;
+      }
+      h3 {
+        margin-bottom: $h3/3;
+      }
+      .buttons {
+        margin-top: 4rem;
+        a {
+          font-size: $a/1.25 !important;
+        }
+      }
+    }
+  }
+}
+
+h3 {
+  font-size: $h3 !important;
+  text-transform: uppercase;
+  font-weight: 500 !important;
+}
+
+
+h4, h5 {
+  font-size: $h4 !important;
+  line-height: 1.5 !important;
+  font-weight: 300;
+}
+
+.services-container h5.header{
+  font-weight: 500 !important;
+}
+
+a {
+  font-size: $a;
+  text-decoration: none;
+}

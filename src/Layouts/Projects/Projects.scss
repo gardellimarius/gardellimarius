@@ -1,0 +1,32 @@
+@use '../../Utils/mixins' as *;
+@use '../../Utils/variables' as *;
+
+@include bp('phone') {
+  .row {
+    gap: $mobileDivGridGap*2;
+    .column {
+      .column-image {
+        overflow: hidden;
+        .column-image-inner {
+          aspect-ratio: auto;
+          flex-basis: 1 !important;
+          aspect-ratio: var(--ratio);
+          flex-grow: calc(var(--ratio));
+          background: rgba(200, 400, 200);
+          background: gray;
+        }
+      }
+    }
+  }
+}
+
+@include bp('tablet') {
+  .row {
+    gap: $mobileDivGridGap;
+  }
+  .row-projects {
+    .column .column-image {
+      padding: 0 !important;
+    }
+  }
+}

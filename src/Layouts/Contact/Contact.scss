@@ -1,0 +1,49 @@
+@use '../../Utils/variables' as *;
+@use '../../Utils/mixins' as *;
+
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  input, textarea {
+    margin-bottom: $mobilePadding;
+    background: black;
+    border: 1px solid white;
+    color: white;
+  }
+  input[type='text'], input[type='email'], input[type='submit'], textarea[name='message'] {
+    font-size: 2.6rem !important;
+  }
+  input {
+    padding: $mobilePadding;;
+    font-size: $h4;
+  }
+  input.button {
+    padding: 2rem;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+  }
+  input.button:hover {
+    background: white;
+    color: black;
+  }
+  input:focus, textarea:focus {
+    outline: none;
+  }
+  textarea {
+    resize: none;
+    height: 30rem;
+    padding: $mobilePadding;
+  }
+}
+
+label {
+  color: white;
+}
+@include bp('tablet') {
+  form {
+    width: 80%;
+  }
+}

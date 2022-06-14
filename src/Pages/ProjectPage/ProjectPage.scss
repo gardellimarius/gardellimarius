@@ -1,0 +1,74 @@
+@use '../../Utils/mixins' as *;
+@use '../../Utils/variables' as *;
+
+
+@include bp('phone') {
+  .container-inner {
+    .row-project-details{
+      padding: 0 !important;
+      .column-text {
+        padding: $mobileDivSpacing 0;
+        h3 {
+          line-height: 150% !important;
+        }
+        .buttons {
+          justify-content: flex-start;
+          .button {
+            transition: .3s ease-in-out;
+            margin-right: $mobilePadding*2;
+            padding: $mobilePadding $mobilePadding*2;
+            border: 1px solid white;
+            color: white;
+          }
+          .button:hover {
+            background: white;
+            color: black;
+          }
+        }
+      }
+      .column-image {
+        display: flex;
+        flex-direction: column;
+        gap: $mobileDivGridGap*2;
+        padding: $mobileDivSpacing 0;
+        .project-image--image {
+          flex-basis: 1;
+          aspect-ratio: var(--ratio);
+          flex-grow: calc(var(--ratio));
+          background: rgba(200, 400, 200);
+          //height: calc(100vw - 4 * $mobilePadding);
+          background: green;
+        }
+      }
+    }
+  }
+}
+
+
+@include bp('tablet') {
+  .container-inner {
+    .row {
+      .column-text {
+        position: -webkit-sticky; /* for Safari */
+        position: sticky;
+        top: 0;
+        align-self: flex-start; /* <-- this is the fix */
+        padding-top: 8rem;
+        .buttons {
+          justify-content: flex-start;
+          .button {
+          }
+        }
+      }
+      .column-image {
+        padding: 0;
+        display: flex;
+        gap: $mobileDivGridGap;
+        .project-image--image {
+          background: green;
+          gap: $tabletDivGridGap;
+        }
+      }
+    }
+  }
+}
